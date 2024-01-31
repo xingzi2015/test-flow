@@ -1,0 +1,24 @@
+#root{
+    display: flex;
+}
+.main_bar{
+    width: 80%;
+    padding: 20px;
+}
+.main_bar>h2{
+    margin: 5px 10px;
+
+}
+.main_button{
+    display: flex;
+    justify-content: flex-end;
+}
+.main_button>div{
+    margin: 0 20px;
+}
+.main_button>button{
+    margin: 0 20px;
+}
+.search_bar{
+    width: 250px;
+}

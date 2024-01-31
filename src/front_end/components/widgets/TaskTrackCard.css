@@ -1,0 +1,38 @@
+.task_tracker_card{
+    padding:  10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+}
+.task_tracker_card>h4{
+    font-size: 18px;
+    margin: 5px;
+}
+.task_tracker_card>.content{
+    margin-left: 20px;
+    padding: 10px 0;
+    min-height: 50px;
+}
+.task_tracker_card>.date{
+    padding: 10px 0;
+}
+.crimson{
+    border-top: 2px solid crimson;
+}
+.crimson>.date{
+    color: crimson;
+}
+.orange{
+    border-top: 2px solid orange;
+}
+.orange>.date{
+    color: orange;
+}
+.darkgreen{
+    border-top: 2px solid green;
+}
+.darkgreen>.date{
+    color: green;
+}
+.pointer{
+    cursor: pointer;
+}
