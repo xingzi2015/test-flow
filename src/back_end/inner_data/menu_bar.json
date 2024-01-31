@@ -1,0 +1,49 @@
+[
+  {
+    "name": "主页",
+    "uri": "",
+    "children": []
+  },
+  {
+    "name": "测试用例",
+    "uri": "",
+    "children": []
+  },
+  {
+    "name": "测试管理",
+    "uri": "",
+    "children": [
+      {
+        "name": "测试任务跟踪",
+        "uri": "task_tracker",
+        "children": []
+      },
+      {
+        "name": "测试任务发布",
+        "uri": "",
+        "children": []
+      },
+      {
+        "name": "测试报告出具",
+        "uri": "",
+        "children": [
+          {
+            "name": "导出测试报告",
+            "uri": "",
+            "children": []
+          },
+          {
+            "name": "导出企标规范",
+            "uri": "",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "帮助",
+    "uri": "",
+    "children": []
+  }
+]
