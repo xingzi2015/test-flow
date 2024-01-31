@@ -2,20 +2,19 @@ import "./TaskTrackCard.css"
 import {CalendarOutlined} from "@ant-design/icons";
 import dayjs from 'dayjs';
 
-const TaskTrackerCard = ({ form, title, content, date,id,status, customClassNames, openMethod}) => {
+const TaskTrackerCard = ({ form, task, customClassNames, openMethod}) => {
     // 固定的类名
     const fixedClassNames = ['task_tracker_card','pointer'];
     const showModal = () => {
         openMethod(true);
         form.setFieldsValue({
-            task_id:id,
-            task_name:title,
-            task_status:status,
-            task_content:content,
-            task_date:dayjs(date, 'YYYY-MM-DD')
+            task_id:task.id,
+            task_name:task.task_name,
+            task_status:task.task_status,
+            task_content:task.task_content,
+            task_date:dayjs(task.task_date, 'YYYY-MM-DD'),
+            task_additional_text: task.task_additional_text
         })
-        console.log(id)
-
     };
 
     // 合并传入的类名和固定的类名
@@ -23,11 +22,11 @@ const TaskTrackerCard = ({ form, title, content, date,id,status, customClassName
 
     return (
         <div className={classNames.join(' ')} onClick={showModal}>
-            <h4>{title}</h4>
-            <div className="content">{content}</div>
+            <h4 dangerouslySetInnerHTML={{ __html: task.task_name_html?task.task_name_html:task.task_name}}></h4>
+            <div className="content" dangerouslySetInnerHTML={{ __html: task.task_content_html?task.task_content_html:task.task_content}}></div>
             <div className="date">
                 <CalendarOutlined />&nbsp;
-                {date}</div>
+                {task.task_date}</div>
         </div>
     );
 };

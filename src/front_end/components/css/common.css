@@ -22,3 +22,6 @@
 .search_bar{
     width: 250px;
 }
+.highlight{
+    background-color: yellow;
+}

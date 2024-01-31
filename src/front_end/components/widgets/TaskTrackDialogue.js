@@ -12,7 +12,8 @@ const TaskTrackDialogue = ({refreshMethod, openStatus, form}) => {
             task_name:"",
             task_status:null,
             task_content:"",
-            task_date:null
+            task_date:null,
+            task_additional_text:""
         })
         setOpen(true);
     };
@@ -88,7 +89,7 @@ const TaskTrackDialogue = ({refreshMethod, openStatus, form}) => {
                 增加事项
             </Button>
             <Modal
-                title="新增事项"
+                title="增加或更新事项"
                 open={open}
                 onOk={handleOk}
                 confirmLoading={confirmLoading}

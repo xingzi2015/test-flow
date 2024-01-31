@@ -50,30 +50,30 @@ app.post('/api/tasks_db', (req, res) => {
 });
 app.put('/api/tasks_db', (req, res) => {
     try {
-        const { task_id, task_name, task_status, task_content, task_date, date_additional_text } = req.body;
+        const { task_id, task_name, task_status, task_content, task_date, task_additional_text } = req.body;
         console.log(req.body);
 
         if (task_id) {
             // 如果有 id，执行更新操作
             const updateQuery = `
                 UPDATE task_tracker
-                SET task_name = ?, task_status = ?, task_content = ?, task_date = ?, date_additional_text = ?
+                SET task_name = ?, task_status = ?, task_content = ?, task_date = ?, task_additional_text = ?
                 WHERE id = ?
             `;
 
             const updateStmt = db.prepare(updateQuery);
-            const updateResult = updateStmt.run(task_name, task_status, task_content, task_date, date_additional_text, task_id);
+            const updateResult = updateStmt.run(task_name, task_status, task_content, task_date, task_additional_text, task_id);
 
             console.log('Data successfully updated in the database:', updateResult);
         } else {
             // 如果没有 id，执行插入操作
             const insertQuery = `
-                INSERT INTO task_tracker (task_name, task_status, task_content, task_date, date_additional_text)
+                INSERT INTO task_tracker (task_name, task_status, task_content, task_date, task_additional_text)
                 VALUES (?, ?, ?, ?, ?)
             `;
 
             const insertStmt = db.prepare(insertQuery);
-            const insertResult = insertStmt.run(task_name, task_status, task_content, task_date, date_additional_text);
+            const insertResult = insertStmt.run(task_name, task_status, task_content, task_date, task_additional_text);
 
             console.log('Data successfully inserted into the database:', insertResult);
         }
